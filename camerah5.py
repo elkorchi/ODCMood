@@ -18,7 +18,7 @@ model = model_from_json(loaded_model_json)
 # Load weights and them to model
 model.load_weights('models/ferv3.h5')
 
-VIDEO_NAME = 'vid3.mp4'
+VIDEO_NAME = 'Clip.mp4'
 CWD_PATH = os.getcwd()
 PATH_TO_VIDEO = os.path.join(CWD_PATH,VIDEO_NAME)
 
@@ -67,6 +67,7 @@ def main():
                 #find max indexed array
                 max_index = int(np.argmax(predictions))
 
+                #emotions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
                 emotions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
                 predicted_emotion = emotions[max_index]
 

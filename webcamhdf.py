@@ -21,6 +21,8 @@ from utils.preprocessor import preprocess_input
 #detection_model_path = '../trained_models/detection_models/haarcascade_frontalface_default.xml'
 emotion_model_path = 'trained_models/emotion_models/fer2013_my_smallerCNN.91-0.66.hdf5'
 emotion_labels = get_labels('fer2013')
+#emotion_labels = ('unhappy', 'unhappy', 'unhappy', 'happy', 'unhappy', 'happy', 'neutral')
+#emotion_labels = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
 
 # hyper-parameters for bounding boxes shape
 frame_window = 10
@@ -43,7 +45,7 @@ emotion_target_size = emotion_classifier.input_shape[1:3]
 emotion_window = []
 ###############################################################################################################################################
 
-VIDEO_NAME = 'vid3.mp4'
+VIDEO_NAME = 'clip.mp4'
 CWD_PATH = os.getcwd()
 PATH_TO_VIDEO = os.path.join(CWD_PATH,VIDEO_NAME)
 
@@ -111,7 +113,7 @@ with sess.as_default():
             color = color.tolist()
             cv2.rectangle(frame, pt1, pt2, color)
 
-            cv2.putText(frame, emotion_text, pt1, cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
+            cv2.putText(frame, emotion_text, pt1, cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
 
 
         

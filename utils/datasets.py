@@ -100,8 +100,10 @@ class DataManager(object):
 
 def get_labels(dataset_name):
     if dataset_name == 'fer2013':
-        return {0:'Angry',1:'Disgust',2:'Fear',3:'Happy',
-                4:'Sad',5:'Surprise',6:'Neutral'}
+#        return {0:'Angry',1:'Disgust',2:'Fear',3:'Happy',
+#               4:'Sad',5:'Surprise',6:'Neutral'}
+        return {0:'Unhappy',1:'Neutral',2:'Neutral',3:'Happy',
+                4:'Neutral',5:'Happy',6:'Neutral'}                
         # return {0:'fear',1:'happy',2:'sad',3:'surprise',
                # 4:'neutral'}
     elif dataset_name == 'imdb':
